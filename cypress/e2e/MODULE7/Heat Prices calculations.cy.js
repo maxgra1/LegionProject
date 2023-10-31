@@ -27,5 +27,6 @@ describe('sanity spec', { defaultCommandTimeout: 10000 }, () => {
     cy.get('[id="NHC"]').invoke('text').should('not.equal', '$0.00')
     cy.get('[id="VTAS"]').invoke('text').should('not.equal', '$0.00')
     cy.get('[id="VTES"]').invoke('text').should('not.equal', '$0.00') 
+    ///fdfdsfsd
   })
 })

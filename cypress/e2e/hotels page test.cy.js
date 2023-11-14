@@ -9,15 +9,16 @@ describe('Hotels Page Test', () => {
   const cargrouplist = '[name="filter.destinationid"]'
   beforeEach(() => {
     cy.visit(hotelListPageUrl);
-    cy.viewport(1980,1080)
   });
 
   it('Verify cities: Jerusalem, London, and New York are on the list', () => {
+    cy.viewport(375,667)
     cy.get('#Filter_DestinationId').select('Jerusalem')
     cy.get('#Filter_DestinationId').select('London')
     cy.get('#Filter_DestinationId').select('New York')
   });
   it('choosing a valid number of children', () => {
+    cy.viewport(375,667)
     cy.get('#Filter_ChildrenNum').should('be.visible');
     cy.get('#Filter_ChildrenNum').clear().type('1').should('have.value','1');
     cy.get('.hotels-wrap').click();
@@ -25,6 +26,7 @@ describe('Hotels Page Test', () => {
     cy.get('input[name="Filter.ChildrensAge[0]"]').clear().type('1');
   });
   it('Negative Test - invalid dates should trigger an error', () => {
+    cy.viewport(375,667)
     // Assuming the input IDs for check-in and check-out dates are '#checkInDate' and '#checkOutDate'
     cy.get('#Filter_DestinationId').select('Jerusalem')
     cy.get('[name="Filter.CheckIn"]').clear();

@@ -35,12 +35,14 @@ describe('Main Menu Sanity Test', () => {
   
 
   it('Verify click on Login navigates to dedicated page', () => {
+    cy.viewport(375,667)
     cy.get('#burger > :nth-child(1)').click();
     cy.get(':nth-child(3) > :nth-child(1) > a').click();
     cy.url().should('include', '/Login');
   });
 
   it('Verify click on Signup navigates to dedicated page', () => {
+    cy.viewport(375,667)
     cy.get('#burger > :nth-child(1)').click();
     cy.get('.mobile-menu > :nth-child(3) > :nth-child(2) > a').click();
     cy.url().should('include', '/en-US/Account/Register');
